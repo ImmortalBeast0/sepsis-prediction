@@ -1,0 +1,81 @@
+================================================================================
+           SEPSIS PREDICTION FRAMEWORK (PHASE 1) - HOW TO RUN GUIDE
+================================================================================
+
+PROJECT OVERVIEW:
+-----------------
+This is Phase 1 (Core ML Prediction Baseline ~40% WIP) of the Sepsis Prediction 
+Framework. It ingests ICU clinical vitals (HR, Temp, BP, Resp, WBC, Age), performs 
+exploratory data analysis (EDA), imputes missing values using medians, trains a 
+baseline Random Forest Classifier, and prints evaluation metrics.
+
+================================================================================
+1. PREREQUISITES & ENVIRONMENT SETUP
+================================================================================
+
+Open PowerShell or Command Prompt in the project root directory:
+
+    cd "E:\Desktop\Final Year Project"
+
+A Python virtual environment (.venv) has already been created in this folder.
+Activate it using:
+
+    - Windows PowerShell:
+      .\.venv\Scripts\Activate.ps1
+
+    - Windows Command Prompt (cmd):
+      .\.venv\Scripts\activate.bat
+
+    - Linux / macOS Terminal:
+      source .venv/bin/activate
+
+(Optional - Install dependencies if running on a new machine):
+    pip install -r requirements.txt
+
+
+================================================================================
+2. RUNNING THE MAIN PIPELINE
+================================================================================
+
+To run the full end-to-end Sepsis Prediction pipeline, execute:
+
+    python main.py
+
+What main.py will do:
+  1. Load dataset from data/sepsis_dataset.csv
+  2. Log Exploratory Data Analysis (EDA) summary (class balance, missing values, correlations)
+  3. Preprocess data (separate features/target and impute NaNs using medians)
+  4. Train baseline Random Forest Classifier (80% train / 20% test split)
+  5. Print Model Accuracy and Confusion Matrix breakdown (TN, FP, FN, TP)
+
+
+================================================================================
+3. RUNNING INDIVIDUAL MODULES (STANDALONE)
+================================================================================
+
+You can test individual module scripts standalone:
+
+  1. Test Data Loader:
+     python src/data_loader.py
+
+  2. Test Preprocessing & EDA Report:
+     python src/preprocess.py
+
+  3. Test Random Forest Model Training:
+     python src/train.py
+
+  4. Test Evaluation Metrics:
+     python src/evaluate.py
+
+  5. Regenerate Clinical Dataset CSV:
+     python scripts/create_sepsis_data.py
+
+
+================================================================================
+4. GITHUB REPOSITORY LINK
+================================================================================
+
+Repository URL: https://github.com/ImmortalBeast0/sepsis-prediction
+Branch: main
+
+================================================================================
