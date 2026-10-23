@@ -26,6 +26,9 @@ Thumbs.db
 *.pptx
 *.jpeg
 *.jpg
-*.png
 sepsis-contaxt.md
+
+# Allow publication figures
+!figures/*.png
+
 
